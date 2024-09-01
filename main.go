@@ -26,7 +26,7 @@ func main() {
 	// Retry loop to get the message
 	for count < maxRetries {
 		msg, err = conf.RequestData.GetMsg() // Get the message from the API
-		if err != nil || msg == "获取数据异常" {
+		if err != nil || msg == "Failed to retrieve data" {
 			count++
 			fmt.Println("Attempt failed, retrying...")
 			time.Sleep(time.Duration(sleepSeconds) * time.Second)

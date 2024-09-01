@@ -116,7 +116,7 @@ func (R *RequestData) GetMsg() (msg string, err error) {
 
 	// Process the response
 	if res.Status != 200 {
-		msg = "Failed to retrieve data"
+		msg = fmt.Sprintf("Failed to retrieve data. Status: %d", res.Status)
 	} else {
 		usedAmp := res.Data.UsedAmp
 		allAmp := res.Data.AllAmp
